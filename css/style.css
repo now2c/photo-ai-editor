@@ -32,7 +32,7 @@
   --transition: .25s cubic-bezier(.4,0,.2,1);
 
   /* Logo sizing — one variable to change for rollback */
-  --logo-maxw: 94vw;
+  --logo-maxw: 96vw;
   --logo-maxh: 28vh;
 }
 
@@ -76,10 +76,9 @@ body {
 }
 .site-logo {
   display: block;
-  max-width: var(--logo-maxw);
-  max-height: var(--logo-maxh);
-  width: auto;
+  width: min(var(--logo-maxw), 1400px);
   height: auto;
+  max-height: var(--logo-maxh);
   object-fit: contain;
   filter: drop-shadow(0 2px 12px rgba(240,180,41,.15));
   transition: all var(--transition);
@@ -723,7 +722,7 @@ body {
   .store-grid { flex-direction: column; }
   .logo-wrap { padding: 1vh 2vw; }
   .site-header { min-height: 160px; }
-  .site-logo { max-width: 92vw; max-height: 22vh; }
+  .site-logo { max-width: 92vw; max-height: 22vh; width: min(92vw, 500px); }
   .hero { padding: 28px 0 24px; }
   .order-panel { margin-inline: -12px; border-radius: 0; }
 }
